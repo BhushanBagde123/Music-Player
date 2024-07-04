@@ -1,0 +1,387 @@
+{
+    "songs": {
+      "newsongs":[
+      {
+        "song_title": "Aisa Main Shaitaan ",
+        "artist": "Pav Dharia",
+        "link": "songs/newsongs/Aisa Main Shaitaan Shaitaan.mp3",
+        "image":"songsImages/aisa-main-shaitaan-shaitaan-500-500.jpg",
+        "id": 0
+      },
+      {
+        "song_title": "Gaadi Kaali",
+        "artist": "Neha Kakkar",
+        "link": "songs/newsongs/Gaadi Kaali - Neha Kakkar.mp3",
+        "image":"songsImages/Gaadi-Kaali-Neha-Kakkar-500-500.jpg",
+        "id": 1
+      },
+      {
+        "song_title": "Husn",
+        "artist": "Anuv Jain",
+        "link": "songs/newsongs/Husn_320(PagalWorld.com.sb).mp3",
+        "image":"songsImages/husn.webp",
+        "id": 2
+        
+      },
+     
+      {
+        "song_title": "Hua Main",
+        "artist": "Pritam Chakraborty",
+        "link": "songs/newsongs/Hua Main - Animal.mp3",
+        "image":"songsImages/Hua-Main-Animal-500-500.jpg",
+        "id": 3
+        
+      },
+      {
+        "song_title": "Ishq Jaisa Kuch",
+        "artist": "Shilpa Rao",
+        "link": "songs/newsongs/Ishq Jaisa Kuch - Fighter.mp3",
+        "image":"songsImages/Sher-Khul-Gaye-Fighter-500-500.jpg",
+        "id": 4
+      },
+      {
+        "song_title": "Khaali Botal",
+        "artist": "Manan Bhardwaj",
+        "link": "songs/newsongs/Khaali Botal - Manan Bhardwaj.mp3",
+        "image":"songsImages/aisa-main-shaitaan-shaitaan-500-500.jpg",
+        "id": 5
+      },
+      {
+        "song_title": "Lutt Putt Gaya",
+        "artist": "Arijit singh",
+        "link": "songs/newsongs/Lutt Putt Gaya - Dunki.mp3",
+        "image":"songsImages/lutt-put-gaya-500-500.jpg",
+        "id": 6
+      },
+      {
+        "song_title": "Naina",
+        "artist": "Diljit Dosanjh",
+        "link": "songs/newsongs/Naina Crew.mp3",
+        "image":"songsImages/naina-crew-500-500.jpg",
+        "id": 7
+      },
+      {
+        "song_title": "O Maahi",
+        "artist": "Arijit singh",
+        "link": "songs/newsongs/O Maahi - Dunki.mp3",
+        "image":"songsImages/lutt-put-gaya-500-500.jpg",
+        "id": 8
+      },
+      {
+        "song_title": "Papa Kehte Hain",
+        "artist": "Srikanth",
+        "link": "songs/newsongs/Papa Kehte Hain Srikanth.mp3",
+        "image":"songsImages/papa-kehte-hain-srikanth-500-500.jpg",
+        "id": 9
+      },
+      {
+        "song_title": "Bhi Main",
+        "artist": "vishal Misra",
+        "link": "songs/newsongs/Pehle Bhi Main - Animal.mp3",
+        "image":"songsImages/Satranga-Animal-500-500.jpg",
+        "id": 10
+      },
+      {
+        "song_title": "Rabba Mereya",
+        "artist": "B Praak",
+        "link": "songs/newsongs/Rabba Mereya - B Praak.mp3",
+        "image":"songsImages/Rabba-Mereya-B-Praak-500-500.jpg",
+        "id": 11
+      },
+      {
+        "song_title": "Satranga",
+        "artist": "Arijit singh",
+        "link": "songs/newsongs/Satranga - Animal.mp3",
+        "image":"songsImages/Satranga-Animal-500-500.jpg",
+        "id": 12
+      },
+      {
+        "song_title": "Sher Khul Gaye",
+        "artist": "Shilpa Rao",
+        "link": "songs/newsongs/Sher Khul Gaye - Fighter.mp3",
+        "image":"songsImages/Sher-Khul-Gaye-Fighter-500-500.jpg",
+        "id": 14
+      },
+      {
+        "song_title": "Sooraj Hi Chhaon Banke",
+        "artist": "Salaar",
+        "link": "songs/newsongs/Sooraj Hi Chhaon Banke - Salaar.mp3",
+        "image":"songsImages/Sooraj-Hi-Chhaon-Banke-Salaar-500-500.jpg",
+        "id": 15
+      },
+      {
+        "song_title": "Tilasmi Bahein",
+        "artist": "Heeramandi",
+        "link": "songs/newsongs/Tilasmi Bahein Heeramandi.mp3",
+        "image":"songsImages/Sooraj-Hi-Chhaon-Banke-Salaar-500-500.jpg",
+        "id": 16
+      },
+      {
+        "song_title": "Tu Mil Gaya",
+        "artist": "Srikanth",
+        "link": "songs/newsongs/Tu Mil Gaya Srikanth.mp3",
+        "image":"songsImages/tu-mil-gaya-srikanth-500-500.jpg",
+        "id": 17
+      },
+      {
+        "song_title": "Urvashi-Ikka",
+        "artist": "Mc stan",
+        "link": "songs/newsongs/Urvashi - Ikka.mp3",
+        "image":"songsImages/Urvashi-Ikka-500-500.jpg",
+        "id": 18
+      },
+      {
+        "song_title": "Zaalim",
+        "artist": "Badshah",
+        "link": "songs/newsongs/Zaalim Badshah.mp3",
+        "image":"songsImages/Zaalim-Badshah-500-500.jpg",
+        "id": 19
+        
+      },
+      {
+        "song_title": "Ghagra",
+        "artist": "Ila Arun",
+        "link": "songs/newsongs/Ghagra - Crew.mp3",
+        "image":"songsImages/Ghagra-Crew-500-500.jpg",
+        "id": 20
+      }
+      
+    ],
+    "trending": [
+      {
+      "song_title": "Heeriye ",
+      "artist": "Arijit singh",
+      "link": "songs/treanding/_Heeriye_320(PagalWorld.com.sb).mp3",
+      "image":"songsImages/trendingimage/67444_4.jpg",
+      "id": 0
+      
+      },
+      {
+        "song_title": "Akhiyan Gulabe ",
+        "artist": "Arijit singh",
+        "link": "songs/treanding/Akhiyan Gulab(PagalWorld.com.sb).mp3",
+        "image":"songsImages/trendingimage/70083_4.jpg",
+        "id": 1
+      }
+      ,
+      {
+        "song_title": "Ami je Tomar ",
+        "artist": "Arijit singh",
+        "link": "songs/treanding/Ami Je Tomar (Kiaras Scare) - Bhool Bhulaiyaa 2 128 Kbps.mp3",
+        "image":"songsImages/trendingimage/9545_4.jpg",
+        "id": 2
+      },
+      {
+      "song_title": "Eenie Meenie ",
+      "artist": "Justin Bieber",
+      "link": "songs/treanding/Eenie Meenie(PagalWorld.com.sb).mp3",
+      "image":"songsImages/trendingimage/66391_4.jpg",
+      "id": 3
+      },
+      {
+      "song_title": "Gulabi Sadi Ani Lali ",
+      "artist": "Arijit singh",
+      "link": "songs/treanding/Gulabi Sadi Ani Lali_320(PagalWorld.com.sb).mp3",
+      "image":"songsImages/trendingimage/70998_4.jpg",
+      "id": 4
+      }
+      ,
+      {
+      "song_title": "Kesariya ",
+      "artist": "Arijit singh",
+      "link": "songs/treanding/Kesariya(PagalWorld.com.sb).mp3",
+      "image":"songsImages/trendingimage/6591_4.jpg",
+      "id": 5
+      },
+      {
+      "song_title": "Khol pinjra ",
+      "artist": "Arijit singh",
+      "link": "songs/treanding/Khol Pinjra_320(PagalWorld.com.sb).mp3",
+      "image":"songsImages/trendingimage/71399_4.jpg",
+      "id": 6
+      },
+      {
+        "song_title": "Maan Meri Jaan ",
+        "artist": "King",
+        "link": "songs/treanding/Maan Meri Jaan(PagalWorld.com.sb).mp3",
+        "image":"songsImages/trendingimage/64630_4.jpg",
+        "id": 7
+        }
+        ,
+      {
+      "song_title": "Ramaiya Vastavaiya ",
+      "artist": "Anirudh Ravichander,Shilpa Rao",
+      "link": "songs/treanding/Not Ramaiya Vastavaiya - Extended Version(PagalWorld.com.sb).mp3",
+      "image":"songsImages/trendingimage/67567_4.jpg",
+      "id": 8
+        },
+    {
+      "song_title": "O Sajni Re ",
+      "artist": "Arijit singh",
+      "link": "songs/treanding/O Sajni Re(PagalWorld.com.sb).mp3",
+      "image":"songsImages/trendingimage/71229_4.jpg",
+      "id": 9
+      },
+      {
+      "song_title": "Paon Ki Jutti ",
+      "artist": "Bunny,Jaani,and Jyoti Nooran",
+      "link": "songs/treanding/Paon Ki Jutti_320(PagalWorld.com.sb).mp3",
+      "image":"songsImages/trendingimage/71059_4.jpg",
+      "id": 10
+        },
+      {
+      "song_title": "Pushpa Pushpa ",
+      "artist": "Arijit singh",
+      "link": "songs/treanding/Pushpa Pushpa - Pushpa 2 The Rule 128 Kbps.mp3",
+      "image":"songsImages/trendingimage/9454_4.jpg",
+      "id": 11
+        },
+      {
+      "song_title": "Yimmy Yimmy ",
+      "artist": "Shreya Ghoshal",
+      "link": "songs/treanding/Yimmy Yimmy(PagalWorld.com.sb).mp3",
+      "image":"songsImages/trendingimage/71190_4.jpg",
+      "id": 12
+        },
+      {
+        "song_title": "Chakeya ",
+        "artist": "Arijit singh",
+        "link": "songs/treanding/Chaleya(PagalWorld.com.sb).mp3",
+        "image":"songsImages/trendingimage/67312_4.jpg",
+        "id": 13
+
+        },
+        {
+          "song_title": "Teri Baaton Mein Aisa Uljha Jiya",
+          "artist": "Arijit singh",
+          "link": "songs/treanding/Teri Baaton Mein Aisa Uljha Jiya_320(PagalWorld.com.sb).mp3",
+          "image":"songsImages/trendingimage/69950_4.jpg",
+          "id": 14
+  
+          }
+
+    ],
+    "oldsongs": [
+      {
+      "song_title": "Aaja Mahiya Fiza ",
+      "artist": "Alka Yagnik and Udit Narayan",
+      "link": "songs/oldsongs/Aaja Mahiya Fiza 320 Kbps.mp3",
+      "image":"songsImages/oldsongimages/Aaja-Mahiya-Fiza-500-500.jpg",
+      "id": 0
+      
+      },
+      {
+        "song_title": "Aisa Pehli Baar Hua Hai ",
+        "artist": "kumar sanu",
+        "link": "songs/oldsongs/Aisa Pehli Baar Hua Hai Har Dil Jo Pyar Karega 128 Kbps.mp3",
+        "image":"songsImages/oldsongimages/Aisa-Pehli-Baar-Hua-Hai-Har-Dil-Jo-Pyar-Karega-500-500.jpg",
+        "id": 1
+      }
+      ,
+      {
+        "song_title": "Apun Bola ",
+        "artist": "srk",
+        "link": "songs/oldsongs/Apun Bola Josh 128 Kbps.mp3",
+        "image":"songsImages/oldsongimages/Apun-Bola-Josh-500-500.jpg",
+        "id": 2
+      },
+      {
+      "song_title": "Ek Pal Ka Jeena ",
+      "artist": "Udit Narayan",
+      "link": "songs/oldsongs/Ek Pal Ka Jeena Kaho Naa Pyar Hai 128 Kbps.mp3",
+      "image":"songsImages/oldsongimages/Ek-Pal-Ka-Jeena-Kaho-Naa-Pyar-Hai-500-500.jpg",
+      "id": 3
+      },
+      {
+      "song_title": "Hai Mera Dil ",
+      "artist": "Sonu Nigam",
+      "link": "songs/oldsongs/Hai Mera Dil Josh 128 Kbps.mp3",
+      "image":"songsImages/oldsongimages/Apun-Bola-Josh-500-500.jpg",
+      "id": 4
+      }
+      ,
+      {
+      "song_title": "Kaho Naa Pyar Hai ",
+      "artist": "Udit Narayan",
+      "link": "songs/oldsongs/Kaho Naa Pyar Hai Sad Udit Narayan 128 Kbps.mp3",
+      "image":"songsImages/oldsongimages/Ek-Pal-Ka-Jeena-Kaho-Naa-Pyar-Hai-500-500.jpg",
+      "id": 5
+      },
+      {
+      "song_title": "Pyar Ki Kashti Mein ",
+      "artist": "Udit Narayan",
+      "link": "songs/oldsongs/Pyar Ki Kashti Mein Kaho Naa Pyar Hai 128 Kbps.mp3",
+      "image":"songsImages/oldsongimages/Ek-Pal-Ka-Jeena-Kaho-Naa-Pyar-Hai-500-500.jpg",
+      "id": 6
+      },
+      {
+        "song_title": "Haule Haule ",
+        "artist": "kumar sanu",
+        "link": "songs/oldsongs/Haule Haule Rab Ne Bana Di Jodi 128 Kbps.mp3",
+        "image":"songsImages/oldsongimages/Haule-Haule-Rab-Ne-Bana-Di-Jodi-500-500.jpg",
+        "id": 7
+        },
+      {
+          "song_title": "Baazigar ",
+          "artist": "kumar sanu",
+          "link": "songs/oldsongs/Baazigar O Baazigar Kumar Sanu 128 Kbps.mp3",
+          "image":"songsImages/oldsongimages/Ye-Kaali-Kaali-Aankhen-Baazigar-500-500.jpg",
+          "id": 8
+        },
+
+        {
+          "song_title": "Tum dil ki dhadkan mein ",
+          "artist": "Kumar sanu",
+          "link": "songs/oldsongs/Tum Dil Ki Dhadkan Mein Kumar Sanu 128 Kbps.mp3",
+          "image":"songsImages/oldsongimages/Tum-Dil-Ki-Dhadkan-Mein-Kumar-Sanu-500-500.jpg",
+          "id": 10
+        },
+        {
+          "song_title": "Tu-Meri-Dost-Hain ",
+          "artist": "Kumar sanu",
+          "link": "songs/oldsongs/Tu Meri Dost Hain Yuvvraaj 128 Kbps.mp3",
+          "image":"songsImages/oldsongimages/Tu-Meri-Dost-Hain-Yuvvraaj-500-500.jpg",
+          "id": 11
+        },
+        {
+          "song_title": "Ye Kaali Kaali Aankhen ",
+          "artist": "Kumar sanu",
+          "link": "songs/oldsongs/Ye Kaali Kaali Aankhen Baazigar 128 Kbps.mp3",
+          "image":"songsImages/oldsongimages/Ye-Kaali-Kaali-Aankhen-Baazigar-500-500.jpg",
+          "id": 12
+        },
+
+        {
+          "song_title": "Pehli-Nazar-Mein ",
+          "artist": "Atif Aslam",
+          "link": "songs/oldsongs/Pehli Nazar Mein Race 128 Kbps.mp3",
+          "image":"songsImages/oldsongimages/Pehli-Nazar-Mein-Race-500-500.jpg",
+          "id": 13
+        }
+
+      
+    ],
+    "Artist":[
+      {
+        "name":"Arijit singh",
+        "image":"songsImages/artist/345_4.jpeg"
+      },
+      {
+         "name":"Dilijit Dosanjh",
+        "image":"songsImages/artist/459_4.jpeg"
+      },
+      {
+         "name":"justin bieber",
+        "image":"songsImages/artist/567_4.jpeg"
+      },
+      { "name":"neha kakkar",
+      "image":"songsImages/artist/789_4.jpeg"},
+
+      { "name":"shiipa rao",
+      "image":"songsImages/artist/234_4.jpeg"}
+    ]
+    
+    }
+    
+  }
+  

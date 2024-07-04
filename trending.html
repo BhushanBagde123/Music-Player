@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending songs</title>
+    <link href="output.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/icons8-music-48.png" type="image/x-icon">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+    <div class="trendingSongs  w-full  h-full md:h-full bg-black">
+        <nav class="w-full h-20 bg-gray-800 text-white flex justify-evenly py-2 items-center ">
+            <div id="nav-1"class=" md:w-1/4 w-1/2 h-4/5 flex justify-center text-center items-center ">
+             <img class="w-10 h-6 rounded-full " src="images/logo.png" alt="logo">
+             <h1 class="font-bold text-xl ">Music Player</h1></div>
+            <div  id="nav-2" class=" w-1/4 rounded-3xl border-2 h-4/5  flex justify-center text-center items-center invisible md:visible "> 
+             <i class="ri-search-line w-12 text-xl"></i>
+             <input class="w-60 px-1 py-1 bg-transparent outline-none" type="text" placeholder="Search Songs"></div>
+            <div  id="nav-3" class=" md:w-1/4  md:border-l-2 h-4/5  flex justify-center md:gap-10 text-center items-center text-2xl font-semibold">
+           <a href="loginPage.html" target="_blank" class="hidden md:block"> <div class="w-1/4 flex cursor-pointer hover:text-gray-600 ">
+             <i class="ri-user-line"></i>
+             <h2>Login</h2>
+            </div></a>
+            <i class="ri-search-line w-12 text-xl md:hidden"></i>
+             <i class=" menu ri-menu-line cursor-pointer"></i>
+            </div>
+         </nav>
+         <div class="mobile-menu -translate-x-full fixed inset-0 z-20 bg-black  text-white md:hidden" style="transition: transform 0.3s ease-in-out;">
+            <div class="p-4">
+                <i class=" cross ri-arrow-right-wide-line text-3xl"></i>
+               <a href="loginPage.html" class="block py-2 text-pink-700 px-4 text-2xl font-bold">Login/Sigup</a>
+              <a href="#" class="block py-2 px-4 text-2xl ">Home</a>
+              <a href="#" class="block py-2 px-4 text-2xl ">About</a>
+              <a href="#" class="block py-2 px-4 text-2xl">Contact</a>
+             
+              
+            </div>
+            <div class="social-links w-full h-28 mt-40 pt-4 ">
+                <div class="flex justify-center text-3xl">
+                <span>FOLLOW</span>
+            </div>
+                <div class="flex justify-center items-center mt-10 gap-10">
+                <a href="#"><i class="ri-facebook-circle-fill text-3xl"></i></a>
+                <a href="#"><i class="ri-twitter-x-line text-3xl"></i></a>
+                <a href="#"><i class="ri-instagram-fill text-3xl"></i></a>
+            </div>
+            </div>
+            </div>
+        
+         <!-- options -->
+         <div class="songsCatagaries w-full h-16 bg-black text-white capitalize my-1 flex overflow-x-auto scroll-smooth no-scrollbar "style="scrollbar-width:none">
+             <ul class="flex justify-evenly text-center items-center min-w-full h-full  gap-4   md:w-full  font-semibold p-2">
+                <a href="index.html"><li class="hover:border-b-2" >All</li></a>
+                 <a href="trending.html"><li class="text-red-600 hover:border-b-2">Treanding</li></a>
+                 <li class="hover:border-b-2 ">oldSong</li>
+                 <a href="newrealease.html "><li class=" hover:border-b-2">newSongs</li></a>
+                 <li class="hover:border-b-2">topAlbum</li>
+                 <li class="hover:border-b-2">topArtist</li>
+             </ul>
+             </div>
+        <div class="titile w-full h-10 text-white text-3xl pl-8 font-bold md:pl-24 bg-black mt-4">
+            <h1 >Treanding</h1>
+        </div>
+        <div class="songs w-full h-auto inline-block gap-4 p-7   md:pl-24 items-center"></div>
+
+<script src="trending.js"></script>
+           
+
+           
+            

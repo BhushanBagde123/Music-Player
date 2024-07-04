@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en " class="bg-black">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link href="output.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/icons8-music-48.png" type="image/x-icon">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body class="overflow-x-hidden" >
+
+    <style>
+        .hide{
+            display:none;
+        }
+    
+    </style>
+    <!-- nav bar -->
+    <nav class="w-full h-20 bg-gray-800 text-white flex justify-evenly py-2 items-center relative overflow-hidden">
+            <div id="nav-1"class=" md:w-1/4 w-1/2 h-4/5 flex justify-center text-center items-center ">
+             <img class="  w-10 h-6 rounded-full " src="images/logo.png" alt="logo">
+             <h1 class="font-bold text-xl ">Music Player</h1></div>
+            <div  id="nav-2" class=" w-1/4 rounded-3xl border-2 h-4/5  flex justify-center text-center items-center invisible md:visible "> 
+             <i class="ri-search-line w-12 text-xl"></i>
+             <input class="w-60 px-1 py-1 bg-transparent outline-none" type="text" placeholder="Search Songs"></div>
+            <div  id="nav-3" class=" md:w-1/4  md:border-l-2 h-4/5  flex justify-center md:gap-10 text-center items-center text-2xl font-semibold">
+           <a href="loginPage.html" target="_blank" class="hidden md:block"> <div class="w-1/4 flex cursor-pointer hover:text-gray-600 ">
+             <i class="ri-user-line"></i>
+             <h2>Login</h2>
+            </div></a>
+            <i class="search ri-search-line w-12 text-xl md:hidden"></i>
+             <i class="menu ri-menu-line cursor-pointer"></i>
+            </div>
+            
+         </nav>
+         <div class="mobile-menu -translate-x-full fixed inset-0 z-20 bg-black  text-white md:hidden" style="transition: transform 0.3s ease-in-out;">
+            <div class="p-4">
+                <i class=" cross ri-arrow-right-wide-line text-3xl"></i>
+               <a href="loginPage.html" target="_blank" class="block py-2 text-pink-700 px-4 text-2xl font-bold">Login/Sigup</a>
+              <a href="#" class="block py-2 px-4 text-2xl ">Home</a>
+              <a href="#" class="block py-2 px-4 text-2xl ">About</a>
+              <a href="#" class="block py-2 px-4 text-2xl">Contact</a>
+             
+              
+            </div>
+            <div class="social-links w-full h-28 mt-40 pt-4 ">
+                <div class="flex justify-center text-3xl">
+                <span>FOLLOW</span>
+            </div>
+                <div class="flex justify-center items-center mt-10 gap-10">
+                <a href="#"><i class="ri-facebook-circle-fill text-3xl"></i></a>
+                <a href="#"><i class="ri-twitter-x-line text-3xl"></i></a>
+                <a href="#"><i class="ri-instagram-fill text-3xl"></i></a>
+            </div>
+            </div>
+          </div>
+        
+        <div class="mobile-menu-search -translate-y-full fixed inset-0 z-20 bg-black  text-white md:hidden" style="transition: transform 0.3s ease-in-out;">
+            <div class="p-4 w-full flex justify-center items-center h-20">
+                <i class=" crossSign ri-arrow-right-wide-line text-3xl"></i> 
+                <div  id="nav-2" class=" w-80 rounded-3xl border-2 h-16  flex justify-center text-center items-center ml-3 "> 
+                    <i class="ri-search-line w-12 text-xl"></i>
+                    <input class=" inputSearch w-64 px-1 py-1 bg-transparent outline-none" type="search" placeholder="Search Songs" song-search></div>
+                </div>
+            <div class="songDisplay w-full h-3/4  overflow-auto px-2 " song-data-cards>
+                
+               
+
+            </div>
+            </div>
+         <template songs-data-template>
+            <div class="songCard w-full h-20 items-center  flex gap-2">
+                <div class="imageCard  ">
+                    <img class="w-14 h-14 rounded-md" src="" alt="" songs-Image>
+                </div>
+                <div class="nameOfSongs  capitalize"> <h4 song-name></h4 >
+                <h6 class="text-sm text-gray-300" artist-name></h6 >
+            </div>
+            <!-- <button play-button class="play-button">Play</button> -->
+            </div>
+         </template>
+    
+            
+        
+         
+         <!-- options -->
+         <div class="songsCatagaries w-full h-16 bg-black text-white capitalize my-1 flex overflow-x-auto scroll-smooth no-scrollbar "style="scrollbar-width:none">
+             <ul class="flex justify-evenly text-center items-center min-w-full h-full  gap-4   md:w-full  font-semibold p-2">
+                <a href="#"><li class="text-red-600 hover:border-b-2" >All</li></a>
+                 <a href="trending.html"target="_blank"><li class="hover:border-b-2">Treanding</li></a>
+                 <li class="hover:border-b-2 ">oldSong</li>
+                 <a href="newrealease.html "target="_blank"><li class="hover:border-b-2">newSongs</li></a>
+                 <li class="hover:border-b-2">topAlbum</li>
+                 <li class="hover:border-b-2">topArtist</li>
+             </ul>
+             </div>
+
+    </div>
+    <!-- hero Section -->
+    <div class="mainHero w-full md:h-96 h-56">
+        <div class="heroSection  md:h-96 h-56 absolute w-full " >
+            <!-- <button class="prevButton w-14  h-14 bg-white rounded-full absolute z-10 inset-y-56">a</button> -->
+             <img  class=" mainImage w-full h-full bg-cover"src="images/hero1.webp" alt="">
+            <div class=" dots h-12 md:w-96 w-56 absolute  bottom-0  md:translate-x-full md:left-24 left-24   flex justify-center items-center text-center md:gap-5 gap-3">
+                <div class="dot md:h-2 md:w-2 w-1 h-1 rounded bg-white"></div>
+                <div class="dot md:h-2 md:w-2 w-1 h-1 rounded bg-white"></div>
+                <div class="dot md:h-2 md:w-2 w-1 h-1 rounded bg-white"></div>
+                <div class="dot md:h-2 md:w-2 w-1 h-1 rounded bg-white"></div>
+                <div class="dot md:h-2 md:w-2 w-1 h-1 rounded bg-white"></div>
+                <div class="dot md:h-2 md:w-2 w-1 h-1 rounded bg-white"></div>
+                <div class="dot md:h-2 md:w-2 w-1 h-1 rounded bg-white"></div>
+                <div class="dot md:h-2 md:w-2 w-1 h-1 rounded bg-white"></div>
+            </div>
+            <!-- <button class="nextButton w-14  h-14 bg-white rounded-full absolute z-10 inset-y-56 right-0	">b</button> -->
+           
+        </div>
+    </div>
+
+    <main class="w-full h-screen my-10 capitalize text-white" >
+        <div class="newRelease w-full h-60  md:px-20 px-6 md:relative">
+            <div class="w-full flex justify-between">
+            <h3 class="md:text-3xl font-bold">new realease</h3>
+           <a href="newrealease.html" target="_blank"><span class=" text-red-700 font-bold">more</span></a> 
+        </div>
+            <button class=" previous w-12 h-12 rounded-full bg-transparent border-2 absolute start-7 my-10 hidden md:block "><i class="ri-arrow-left-fill w-full h-full"></i></button>
+            <div class="songsContents w-full h-48  flex overflow-x-auto scroll-smooth no-scrollbar"style='scrollbar-width:none' >
+            </div>
+            <button class=" next w-12 h-12 rounded-full bg-transparent border-2  absolute my-10 top-9 end-7  hidden md:block"><i class="ri-arrow-right-fill w-full h-full"></i></button> 
+        </div>
+        <div class="songsTrack w-full md:h-24 h-20 fixed bottom-0 z-10 hidden ">
+        <div class="progressBar w-full md:h-2 h-1  rounded-r"></div>
+        <div class="track w-full md:h-28 h-20 bg-gray-800  flex justify-between ">
+            
+            <div class="trackPart1 md:w-1/3 w-1/2 flex  gap-2 md:gap-3">
+                <div class="trackImage w-16 h-16 md:h-full mt-3 md:mt-1   ">
+                    <img  class=" image w-12 h-12 md:w-16 md:h-16 rounded-sm md:rounded-none" src="songsImages\lutt-put-gaya-500-500.jpg" alt=" trackImage">
+                </div>
+                
+                <div class="trackName mt-2  ">
+                    <h4 class="text-xs md:text-base" >Satranga-Animal</h4>
+                    <h6 class="text-xs md:text-base text-gray-300">arijit singh</h6>
+                </div>
+               
+            </div>
+           
+            <div class="trackPart2 w-1/3  flex justify-center items-center md:gap-3 gap-1 mr-5 md:mr:0  ">
+                <div class="previousPlayButton"><i class="ri-skip-left-fill md:text-5xl text-3xl cursor-pointer"></i></div>
+                <div class="loader md:w-12 md:h-12 w-8 h-8 hidden rounded-full md:border-8 border-8 border-gray-800 border-t-8 border-t-pink-700 animate-spin"></div>
+                <div class="playPause"><i class="play ri-play-circle-fill md:text-5xl text-3xl cursor-pointer"></i><i class=" pause ri-pause-circle-fill md:text-5xl text-3xl cursor-pointer" style="display:none"></i></div>
+                <div class="nextPlayButton"><i class="ri-skip-right-fill md:text-5xl text-3xl cursor-pointer"></i></div>
+
+            </div>
+            <div class="trackPart3   w-1/3 flex justify-evenly items-center gap-3">
+                <div class="like">
+                    <i class="ri-heart-fill  md:text-3xl text-2xl cursor-pointer"></i>
+                </div>
+                <div class="timeShow text-xs md:text-xl py-2 md:py-0">
+                    <span id="current-time">0:00</span> / <span id="total-duration">0:00</span>
+                </div>
+                <div class="soindControl hidden md:flex">
+                    <i class="ri-volume-up-line text-3xl cursor-pointer"></i>
+                <input class="volumeButton hidden" type="range"  min="0" max="1" step="0.1" value="1">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="treandingSongs w-full h-60 md:px-20 px-6 md:mt-20 mt:10 md:relative">
+        <div class="w-full flex justify-between">
+        <h3 class="md:text-3xl font-bold">Treanding</h3>
+       <a href="trending.html" target="_blank"><span class="font-bold text-red-700">more</span></a> 
+       </div>
+    <div class="trinding ">
+        <button class=" trendingprevious w-12 h-12 rounded-full bg-transparent border-2 absolute start-7 my-10 hidden md:block"><i class="ri-arrow-left-fill w-full h-full"></i></button>
+        <div class="trindingSongsContainer w-full h-48  flex  overflow-x-auto scroll-smooth no-scrollbar"style="scrollbar-width:none">
+        </div>
+       
+        <button class=" trendingnext w-12 h-12 rounded-full bg-transparent border-2  absolute my-10 top-9 end-7  hidden md:block"><i class="ri-arrow-right-fill w-full h-full"></i></button> 
+    </div>
+   
+    </div>
+    <div class="oldSongs w-full h-60  px-6 md:mt-20 mt:10  md:px-20 md:relative">
+        <div class="w-full flex justify-between">
+        <h3 class="md:text-3xl font-bold">Old Songs</h3>
+       </div>
+    <div class="oldSongs">
+    <button class=" oldprevious w-12 h-12 rounded-full bg-transparent border-2 absolute start-7 my-10 hidden md:block"><i class="ri-arrow-left-fill w-full h-full"></i></button>
+    <div class="oldSongsContainer w-full h-48  flex  overflow-x-auto scroll-smooth no-scrollbar"style="scrollbar-width:none">
+    
+    </div>
+    <button class=" oldnext w-12 h-12 rounded-full bg-transparent border-2  absolute my-10 top-9 end-7  hidden md:block"><i class="ri-arrow-right-fill w-full h-full"></i></button>
+    </div>
+</div>
+    <div class="topAlbum w-full h-60  md:px-20 px-6 md:mt-20 mt:10">
+        <div class="w-full flex justify-between">
+        <h3 class="md:text-3xl font-bold">Top Album</h3>
+       </div>
+    <div class="ablums  w-full h-48  flex  overflow-x-auto scroll-smooth no-scrollbar"style="scrollbar-width:none">
+    
+    </div>
+    </div>
+
+    <div class="topArtist w-full h-64  md:px-20 px-6 md:mt-20 mt:10">
+        <div class="w-full flex justify-between">
+        <h3 class="md:text-3xl font-bold">Top Artist</h3>
+       </div>
+    <div class="topArtistContainer w-full h-64 md:58  flex  overflow-x-auto scroll-smooth no-scrollbar"style="scrollbar-width:none">
+       
+    </div>
+    </div>
+    <footer class="w-full h-80 md:mt-32 mt-24 border-t-2">
+        <div class="w-full h-32 md:text-2xl uppercase list-none md:flex justify-evenly text-center items-center inline-block pt-3">
+            <li >about us</li>
+            <li>contact</li>
+            <li>terms and condition</li>
+            <li>privacy policy</li>
+            <li>helloutnes</li>
+        </div>
+        <div class="w-full h-1/2  md:text-2xl flex gap-4 justify-center text-center items-center">
+            <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+            <a href="#"><i class="ri-twitter-x-line"></i></a>
+            <a href="#"><i class="ri-instagram-fill"></i></a>
+            <a href="#"><i class="ri-github-fill"></i></a>
+        </div>
+
+    </footer>
+    </main>
+
+  
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
