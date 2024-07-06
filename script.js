@@ -119,12 +119,13 @@ searchButton();
          
         
             for(let i=0;i<=12 ;i++){
-                add+=`<div  class="partOne h-full  gap-4 text-center p-1">
-                    <div id=${i} class=" songsList  md:w-60 md:h-full h-full w-52 rounded-xl flex justify-center items-center bg-no-repeat bg-cover cursor-pointer" style="background-image: url(${data.songs.newsongs[i].image});border-radius:20px;  ">
+                add+=`<div  class="partOne h-full text-center p-1  px-2 ">
+                    <div id=${i} class=" songsList  md:w-60 md:h-full h-full w-52 rounded-lg flex justify-center items-center bg-no-repeat bg-cover cursor-pointer" style="background-image: url(${data.songs.newsongs[i].image});border-radius:15px;  ">
                     <div id="${i}" class="playButton cursor-pointer w-12 h-12 rounded-full bg-black  hidden justify-center items-center text-center  md:flex ">
                     <i class="text-3xl ri-play-circle-fill"></i>
                     </div>
                     </div>
+                    <div class="songName md:hidden w-full h-8  font-semibold p-1 text-xs"><p class="text-left">${data.songs.newsongs[i].song_title}</p></div>
                  </div>`
                
         
@@ -143,12 +144,13 @@ searchButton();
             
            
                for(let i=0;i<=14 ;i++){
-                   add+=`<div  class="partTwo h-full  gap-4 text-center p-1">
-                       <div id=${i} class=" songsList  md:w-60 md:h-full h-full  w-52 flex justify-center items-center bg-no-repeat bg-cover cursor-pointer" style="background-image: url(${data.songs.trending[i].image});border-radius:20px;  ">
+                   add+=`<div  class="partTwo h-full  gap-4 text-center p-1  px-2 ">
+                       <div id=${i} class=" songsList  md:w-60 md:h-full h-full  w-52 flex justify-center items-center bg-no-repeat bg-cover cursor-pointer" style="background-image: url(${data.songs.trending[i].image});border-radius:15px;  ">
                        <div id="${i}" class="playButton cursor-pointer w-12 h-12 rounded-full bg-black hidden justify-center items-center text-center md:flex ">
                        <i class="text-3xl ri-play-circle-fill"></i>
                        </div>
                        </div>
+                       <div class="songName md:hidden w-full h-8  p-1 font-semibold text-xs"><p class="text-left">${data.songs.trending[i].song_title}</p></div>
                     </div>`
                   
            
@@ -168,12 +170,13 @@ searchButton();
             
            
                for(let i=0;i<=12 ;i++){
-                   add+=`<div  class="partThree h-full  gap-4 text-center p-1">
-                       <div id=${i} class=" songsList  md:w-60 md:h-full h-full  w-52 flex justify-center items-center bg-no-repeat bg-cover cursor-pointer" style="background-image: url(${data.songs.oldsongs[i].image});border-radius:20px;  ">
+                   add+=`<div  class="partThree h-full  gap-4 text-center p-1 px-2 ">
+                       <div id=${i} class=" songsList  md:w-60 md:h-full h-full  w-52 flex justify-center items-center bg-no-repeat bg-cover cursor-pointer " style="background-image: url(${data.songs.oldsongs[i].image});border-radius:15px;  ">
                        <div id="${i}" class="playButton cursor-pointer w-12 h-12 rounded-full bg-black  hidden justify-center items-center text-center  md:flex ">
                        <i class="text-3xl ri-play-circle-fill"></i>
                        </div>
                        </div>
+                        <div class="songName md:hidden w-full h-8   p-1 font-semibold text-xs"><p class="text-left">${data.songs.oldsongs[i].song_title}</p></div>
                     </div>`
                   
            
@@ -191,7 +194,7 @@ searchButton();
             
            
                for(let i=6;i<=12 ;i++){
-                   add+=`<div  class="partFour h-full  gap-4 text-center p-1">
+                   add+=`<div  class="partFour h-full  gap-4 text-center p-1  px-2 ">
                        <div id=${i} class=" songsList  md:w-60 md:h-full h-full  w-52 flex justify-center items-center bg-no-repeat bg-cover cursor-pointer" style="background-image: url(${data.songs.trending[i].image});border-radius:20px;  ">
                        <div id="${i}" class="playButton cursor-pointer w-12 h-12 rounded-full bg-black  justify-center items-center text-center hidden md:flex ">
                        <i class="text-3xl ri-play-circle-fill"></i>
@@ -212,10 +215,10 @@ searchButton();
             for(let i=0;i<data.songs.Artist.length;i++){
                 // console.log(data.songs.Artist[i].name)
                 // console.log(data.songs.Artist[i].image)
-               add+=`<div class=" partFive w-full h-full  px-6">
-              <div class="md:w-44 md:h-44 w-56 h-56 rounded-full cursor-pointer  bg-no-repeat bg-cover" style="background-image: url(${data.songs.Artist[i].image}); ">
+               add+=`<div class=" partFive w-full h-full  md:px-6 px-4">
+              <div class=" artistImage md:w-44 md:h-44 w-56 h-56 rounded-full cursor-pointer  bg-no-repeat bg-cover" style="background-image: url(${data.songs.Artist[i].image}); ">
               </div>
-              <div class="w-full  felx justify-center items-center text-xl">
+              <div class="w-full  felx justify-center items-center md:text-xl text-sm">
               <h4 class="text-center">${data.songs.Artist[i].name}
               </h4>
               </div>
@@ -538,13 +541,16 @@ like.addEventListener("click", () => {
 function searchSongs() {
     const templateCards = document.querySelector("[songs-data-template]");
     const songCardsContainer = document.querySelector("[song-data-cards]");
-    const search = document.querySelector("[song-search]");
+    const search = document.querySelector(".inputSearch");
     songCardsContainer.style.display="none";
+    const exitButton =document.querySelector(".exitButton");
     let songs = [];
-
+   
     search.addEventListener("input", (e) => {
         const value = e.target.value.toLowerCase();
         songCardsContainer.style.display="block";
+        console.log(value);
+       
         songs.forEach((fetchSong) => {
             const isVisible =
                 fetchSong.image.toLowerCase().includes(value) ||
@@ -553,6 +559,13 @@ function searchSongs() {
                 fetchSong.element.classList.toggle("hide", !isVisible);
         });
     });
+    exitButton.addEventListener("click",()=>{
+        if(search){
+            search.value="";
+        }
+        songCardsContainer.style.display="none"; 
+       
+    })
     const newSong = data.songs.newsongs;
     const trendingSong =data.songs.trending;
     const oldSong =data.songs.oldsongs

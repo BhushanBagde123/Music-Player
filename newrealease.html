@@ -13,6 +13,28 @@
 />
 </head>
 <body>
+    <style>
+         .newSongList{
+            width:47vw;
+            height:47vw;
+        }
+        h6{
+            width:80%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;     
+        }
+        img{
+            border-radius: 12px;
+        }
+        @media (min-width:768px) {
+        .newSongList{
+        width:14rem;
+        height:14rem;
+        }
+    
+        }
+    </style>
     <div class="newRealeaseSongs  w-full md:h-full h-max bg-black">
         <nav class="w-full h-20 bg-gray-800 text-white flex justify-evenly py-2 items-center ">
             <div id="nav-1"class=" md:w-1/4 w-1/2 h-4/5 flex justify-center text-center items-center ">
@@ -62,19 +84,29 @@
                  <li class="hover:border-b-2">topArtist</li>
              </ul>
              </div>
-        <div class="titile w-full h-10 text-white text-3xl pl-8 font-bold md:pl-24 bg-black mt-4">
+        <div class="titile w-full h-10 text-white text-3xl pl-4 font-bold md:pl-24 bg-black mt-4">
             <h1 >New Realease</h1>
         </div>
-        <div class="songs w-full h-auto inline-block  gap-10 text-center   md:pl-20 items-center">
+        <div class="songs w-full h-auto inline-block  md:gap-10 md:pl-20">
            
-
-           
-            
-           
-           
-
         </div>
     </div>
+    <footer class="w-full h-80   bg-black border-t-2 text-white">
+        <div class="w-full h-32 md:text-2xl uppercase list-none md:flex justify-evenly text-center items-center inline-block pt-3">
+            <li >about us</li>
+            <li>contact</li>
+            <li>terms and condition</li>
+            <li>privacy policy</li>
+            <li>helloutnes</li>
+        </div>
+        <div class="w-full h-1/2 md:text-2xl flex gap-4 justify-center text-center items-center">
+            <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+            <a href="#"><i class="ri-twitter-x-line"></i></a>
+            <a href="#"><i class="ri-instagram-fill"></i></a>
+            <a href="#"><i class="ri-github-fill"></i></a>
+        </div>
+
+    </footer>
     
 
     

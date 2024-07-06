@@ -8,11 +8,12 @@ const  main =   async ()=> {
             let trendingSongs =document.querySelector(".songs");
             let add="";
             for(let i=0;i<data.songs.trending.length;i++){
-                add+= ` <div id="${i}" class="newSongList inline-block cursor-pointer  m-10  md:w-60 md:h-60 w-40 h-40 rounded-xl" style=" position: relative;">
+                add+= ` <div id="${i}" class="newSongList inline-block cursor-pointer   md:w-64 md:h-64 w-40 h-40 p-3 md:text-center" style=" position: relative;">
                      <span id="${i}" class="hidden playButton w-12 h-12 bg-black text-white absolute rounded-full md:flex items-center justify-center text-center" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
                         <i class="text-3xl ri-play-circle-fill"></i>
                      </span>
-                    <img class="w-full h-full" src="${data.songs.trending[i].image}" alt="images">
+                    <img class="w-full h-full " src="${data.songs.trending[i].image}" alt="images">
+                    <h6 class="w-full h-6 text-md font-bold text-white">${data.songs.trending[i].song_title} </h6>
                     </div>`;
             }
            

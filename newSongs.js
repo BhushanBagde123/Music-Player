@@ -3,16 +3,16 @@ const  main =   async ()=> {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        console.log(data.songs.newsongs.length);
         function newSongs(){
             let newReleaseSongs =document.querySelector(".songs");
             let add='';
             for(let i=0;i<data.songs.newsongs.length;i++){
-                add+= ` <div id="${i}" class="newSongList inline-block cursor-pointer  m-10  md:w-60 md:h-60 w-40 h-40  " style=" position: relative; border-radius:20px;">
+                add+= ` <div id="${i}" class="newSongList inline-block cursor-pointer  md:m-10  md:w-64 md:h-64 w-40 h-40 p-3  " style=" position: relative; border-radius:20px;">
                      <span id="${i}" class="hidden playButton w-12 h-12 bg-black text-white absolute rounded-full md:flex items-center justify-center text-center" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
                         <i class="text-3xl ri-play-circle-fill"></i>
                      </span>
-                    <img class="w-full h-full" src="${data.songs.newsongs[i].image}" alt="images">
+                    <img class="w-full h-full " src="${data.songs.newsongs[i].image}" alt="images">
+                    <h6 class="w-full h-6 text-md font-bold text-white">${data.songs.newsongs[i].song_title} </h6>
                     </div>`;
             }
            

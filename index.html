@@ -17,6 +17,32 @@
         .hide{
             display:none;
         }
+        .songsList{
+           width:35vw;
+           height:35vw;
+          
+        }
+        .artistImage{
+            width:35vw;
+            height:35vw;
+        }
+        .songName p{
+            width:80%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;     
+        }
+    
+        @media (min-width:768px) {
+        .songsList{
+           width:15rem;
+           height:100%;
+        }
+        .artistImage{
+            width:11rem;
+            height:11rem;
+        }  
+        }
     
     </style>
     <!-- nav bar -->
@@ -60,12 +86,14 @@
           </div>
         
         <div class="mobile-menu-search -translate-y-full fixed inset-0 z-20 bg-black  text-white md:hidden" style="transition: transform 0.3s ease-in-out;">
-            <div class="p-4 w-full flex justify-center items-center h-20">
-                <i class=" crossSign ri-arrow-right-wide-line text-3xl"></i> 
-                <div  id="nav-2" class=" w-80 rounded-3xl border-2 h-16  flex justify-center text-center items-center ml-3 "> 
-                    <i class="ri-search-line w-12 text-xl"></i>
-                    <input class=" inputSearch w-64 px-1 py-1 bg-transparent outline-none" type="search" placeholder="Search Songs" song-search></div>
+            <div class="p-3 w-full flex justify-center items-center h-20">
+                <i class=" crossSign ri-arrow-left-wide-line text-3xl"></i> 
+                <div  id="nav-2" class=" w-80 rounded-3xl border-2 h-16  flex justify-center text-center items-center ml-2 "> 
+                    <i class="ri-search-line w-10 text-2xl"></i>
+                    <input class=" inputSearch w-60 px-1 py-1 bg-transparent outline-none" type="input" placeholder="Search Songs" song-search></div>
+                    <button class=" exitButton w-6 h-6 text-center rounded-md bg-red-600">x</button>
                 </div>
+               
             <div class="songDisplay w-full h-3/4  overflow-auto px-2 " song-data-cards>
                 
                
@@ -121,13 +149,13 @@
     </div>
 
     <main class="w-full h-screen my-10 capitalize text-white" >
-        <div class="newRelease w-full h-60  md:px-20 px-6 md:relative">
+        <div class="newRelease w-full h-60  md:px-20 px-4 md:relative">
             <div class="w-full flex justify-between">
-            <h3 class="md:text-3xl font-bold">new realease</h3>
-           <a href="newrealease.html" target="_blank"><span class=" text-red-700 font-bold">more</span></a> 
+            <h3 class="md:text-3xl  text-2xl font-bold">new realease</h3>
+           <a class="mt-2 md:mt-0" href="newrealease.html" target="_blank"><span class=" text-red-700 font-bold">more</span></a> 
         </div>
             <button class=" previous w-12 h-12 rounded-full bg-transparent border-2 absolute start-7 my-10 hidden md:block "><i class="ri-arrow-left-fill w-full h-full"></i></button>
-            <div class="songsContents w-full h-48  flex overflow-x-auto scroll-smooth no-scrollbar"style='scrollbar-width:none' >
+            <div class="songsContents w-full h-48 mt-3  md:mt-0 flex overflow-x-auto scroll-smooth no-scrollbar"style='scrollbar-width:none' >
             </div>
             <button class=" next w-12 h-12 rounded-full bg-transparent border-2  absolute my-10 top-9 end-7  hidden md:block"><i class="ri-arrow-right-fill w-full h-full"></i></button> 
         </div>
@@ -169,46 +197,46 @@
             </div>
         </div>
     </div>
-    <div class="treandingSongs w-full h-60 md:px-20 px-6 md:mt-20 mt:10 md:relative">
+    <div class="treandingSongs w-full h-60 md:px-20 px-4 md:mt-20 mt:10 md:relative">
         <div class="w-full flex justify-between">
-        <h3 class="md:text-3xl font-bold">Treanding</h3>
-       <a href="trending.html" target="_blank"><span class="font-bold text-red-700">more</span></a> 
+        <h3 class="md:text-3xl  text-2xl font-bold">Treanding</h3>
+       <a  class="mt-2 md:mt-0" href="trending.html" target="_blank"><span class="font-bold text-red-700">more</span></a> 
        </div>
     <div class="trinding ">
         <button class=" trendingprevious w-12 h-12 rounded-full bg-transparent border-2 absolute start-7 my-10 hidden md:block"><i class="ri-arrow-left-fill w-full h-full"></i></button>
-        <div class="trindingSongsContainer w-full h-48  flex  overflow-x-auto scroll-smooth no-scrollbar"style="scrollbar-width:none">
+        <div class="trindingSongsContainer w-full h-48 mt-3 md:mt-0 flex  overflow-x-auto scroll-smooth no-scrollbar"style="scrollbar-width:none">
         </div>
        
         <button class=" trendingnext w-12 h-12 rounded-full bg-transparent border-2  absolute my-10 top-9 end-7  hidden md:block"><i class="ri-arrow-right-fill w-full h-full"></i></button> 
     </div>
    
     </div>
-    <div class="oldSongs w-full h-60  px-6 md:mt-20 mt:10  md:px-20 md:relative">
+    <div class="oldSongs w-full h-60  px-4 md:mt-20 mt:10  md:px-20 md:relative">
         <div class="w-full flex justify-between">
-        <h3 class="md:text-3xl font-bold">Old Songs</h3>
+        <h3 class="md:text-3xl  text-2xl font-bold">Old Songs</h3>
        </div>
     <div class="oldSongs">
     <button class=" oldprevious w-12 h-12 rounded-full bg-transparent border-2 absolute start-7 my-10 hidden md:block"><i class="ri-arrow-left-fill w-full h-full"></i></button>
-    <div class="oldSongsContainer w-full h-48  flex  overflow-x-auto scroll-smooth no-scrollbar"style="scrollbar-width:none">
+    <div class="oldSongsContainer w-full h-48 mt-3 md:mt-0  flex  overflow-x-auto scroll-smooth no-scrollbar"style="scrollbar-width:none">
     
     </div>
     <button class=" oldnext w-12 h-12 rounded-full bg-transparent border-2  absolute my-10 top-9 end-7  hidden md:block"><i class="ri-arrow-right-fill w-full h-full"></i></button>
     </div>
 </div>
-    <div class="topAlbum w-full h-60  md:px-20 px-6 md:mt-20 mt:10">
+    <div class="topAlbum w-full h-60  md:px-20 px-4 md:mt-20 mt:10">
         <div class="w-full flex justify-between">
-        <h3 class="md:text-3xl font-bold">Top Album</h3>
+        <h3 class="md:text-3xl text-2xl font-bold">Top Album</h3>
        </div>
-    <div class="ablums  w-full h-48  flex  overflow-x-auto scroll-smooth no-scrollbar"style="scrollbar-width:none">
+    <div class="ablums  w-full h-48  flex mt-3 md:mt-0 overflow-x-auto scroll-smooth no-scrollbar"style="scrollbar-width:none">
     
     </div>
     </div>
 
-    <div class="topArtist w-full h-64  md:px-20 px-6 md:mt-20 mt:10">
+    <div class="topArtist w-full h-64  md:px-20 px-4 md:mt-20 mt:10">
         <div class="w-full flex justify-between">
-        <h3 class="md:text-3xl font-bold">Top Artist</h3>
+        <h3 class="md:text-3xl text-2xl font-bold">Top Artist</h3>
        </div>
-    <div class="topArtistContainer w-full h-64 md:58  flex  overflow-x-auto scroll-smooth no-scrollbar"style="scrollbar-width:none">
+    <div class="topArtistContainer w-full h-64 md:58 mt-3 md:mt-0  flex  overflow-x-auto scroll-smooth no-scrollbar"style="scrollbar-width:none">
        
     </div>
     </div>
