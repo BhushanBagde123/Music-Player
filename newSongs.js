@@ -62,8 +62,8 @@ const  main =   async ()=> {
             menu.classList.add("-translate-x-full");
         })
     };
+    
     navButton();
-
 
     }
 

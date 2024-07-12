@@ -22,6 +22,7 @@
            height:35vw;
           
         }
+        
         .artistImage{
             width:35vw;
             height:35vw;
@@ -30,18 +31,49 @@
             width:80%;
             overflow: hidden;
             white-space: nowrap;
-            text-overflow: ellipsis;     
+            text-overflow: ellipsis; 
+               
         }
-    
+        .seekBar{
+            accent-color:#F33A6A;
+        }
+        .volumeButton{
+            accent-color:#F33A6A;
+        }
+        .fullSeekBar{
+            accent-color:#F33A6A;
+        }
+        .fullSongsTrack{
+            background-image: url("songsImages/lutt-put-gaya-500-500.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position:center;
+            background-blend-mode:overlay;
+                       
+        }
+        .fullTrackImage{
+            width:18rem;
+            height:18rem;
+        }
+       
         @media (min-width:768px) {
         .songsList{
-           width:15rem;
-           height:100%;
+           width:12rem;
+           height:88%;
         }
         .artistImage{
             width:11rem;
             height:11rem;
-        }  
+        }
+        .songName p{
+            font-size: large;
+        }
+        .fullTrackImage{
+            width:16rem;
+            height:14rem;
+        }
+       
+    
         }
     
     </style>
@@ -100,6 +132,7 @@
 
             </div>
             </div>
+           
          <template songs-data-template>
             <div class="songCard w-full h-20 items-center  flex gap-2">
                 <div class="imageCard  ">
@@ -147,7 +180,7 @@
            
         </div>
     </div>
-
+<!-- main -->
     <main class="w-full h-screen my-10 capitalize text-white" >
         <div class="newRelease w-full h-60  md:px-20 px-4 md:relative">
             <div class="w-full flex justify-between">
@@ -160,23 +193,25 @@
             <button class=" next w-12 h-12 rounded-full bg-transparent border-2  absolute my-10 top-9 end-7  hidden md:block"><i class="ri-arrow-right-fill w-full h-full"></i></button> 
         </div>
         <div class="songsTrack w-full md:h-24 h-20 fixed bottom-0 z-10 hidden ">
-        <div class="progressBar w-full md:h-2 h-1  rounded-r"></div>
+        <div class="progressBar w-full md:h-1 h-1  rounded-r  bg-black  relative">
+            <input class=" seekBar w-full h-full  absolute" type="range" value="0" max="100">
+        </div>
         <div class="track w-full md:h-28 h-20 bg-gray-800  flex justify-between ">
             
             <div class="trackPart1 md:w-1/3 w-1/2 flex  gap-2 md:gap-3">
-                <div class="trackImage w-16 h-16 md:h-full mt-3 md:mt-1   ">
+                <div class="trackImage w-16 h-16 md:h-full mt-3 md:mt-3 md:ml-3   ">
                     <img  class=" image w-12 h-12 md:w-16 md:h-16 rounded-sm md:rounded-none" src="songsImages\lutt-put-gaya-500-500.jpg" alt=" trackImage">
                 </div>
                 
-                <div class="trackName mt-2  ">
-                    <h4 class="text-xs md:text-base" >Satranga-Animal</h4>
+                <div class="trackName md:mt-2 mt-4 ">
+                    <h4 class="text-xs md:text-base md:font-semibold" >Satranga-Animal</h4>
                     <h6 class="text-xs md:text-base text-gray-300">arijit singh</h6>
                 </div>
                
             </div>
            
             <div class="trackPart2 w-1/3  flex justify-center items-center md:gap-3 gap-1 mr-5 md:mr:0  ">
-                <div class="previousPlayButton"><i class="ri-skip-left-fill md:text-5xl text-3xl cursor-pointer"></i></div>
+                <div class="previousPlayButton "><i class="ri-skip-left-fill md:text-5xl text-3xl cursor-pointer"></i></div>
                 <div class="loader md:w-12 md:h-12 w-8 h-8 hidden rounded-full md:border-8 border-8 border-gray-800 border-t-8 border-t-pink-700 animate-spin"></div>
                 <div class="playPause"><i class="play ri-play-circle-fill md:text-5xl text-3xl cursor-pointer"></i><i class=" pause ri-pause-circle-fill md:text-5xl text-3xl cursor-pointer" style="display:none"></i></div>
                 <div class="nextPlayButton"><i class="ri-skip-right-fill md:text-5xl text-3xl cursor-pointer"></i></div>
@@ -191,11 +226,44 @@
                 </div>
                 <div class="soindControl hidden md:flex">
                     <i class="ri-volume-up-line text-3xl cursor-pointer"></i>
-                <input class="volumeButton hidden" type="range"  min="0" max="1" step="0.1" value="1">
+                <input class="volumeButton hidden  " type="range"  min="0" max="1" step="0.1" value="1">
                 </div>
                 
             </div>
         </div>
+    </div>
+
+    <div class="fullSongsTrack w-screen h-screen z-30 hidden bg-gray-800 fixed  top-0 " style="transition: transform 0.3s ease-in-out;">
+    <div class="navSongTrack w-full h-10 flex px-4  text-white  items-center">
+        <i class="closeIcon cursor-pointer text-2xl  font-bold ri-close-large-line"></i>
+    </div>
+    <div class="fullTrack w-full h-full md:mt-6 md:px-14 flex justify-center flex-col items-center align-middle">
+           <div class="fullTrackPart1 w-full h-1/3  md:justify-end md:flex-row md:px-3 flex justify-center flex-col items-center align-middle">
+            <div class="fullTrackImage shadow-lg">
+                <img class=" w-full h-full" src="songsImages\lutt-put-gaya-500-500.jpg" alt="songs image">
+            </div>
+            <div class="fullTrackName w-full md:w-full md:mx-5 md:justify-end md:items-start h-20 mt-7 flex flex-col  justify-center items-center align-middle">
+                <h4 class="text-xl font-bold md:text-5xl" >Satranga-Animal</h4>
+                <h6 class="text-sm md:text-3xl text-gray-300">arijit singh</h6>
+            </div>
+
+           </div> 
+        <div class="fullTrackPart2 w-full h-1 mt-24 flex justify-center item-center align-middle ">
+        <div class="fullProgressBar w-3/4 md:h-1 h-1 md:w-[95%] rounded-r bg-transparent relative">
+            <input class=" fullSeekBar w-full h-full  absolute" type="range" value="0" max="100">
+            <div class="songTime flex justify-between mt-3">
+                <span id="full-current-time">0:00</span>  <span id="full-total-duration">0:00</span>
+            </div>
+        </div>
+    </div>
+    <div class="fullTrackPart3 w-full mt-14  flex justify-center items-center align-middle md:gap-3 gap-1 md:mr:0  ">
+        <div class="fullPreviousPlayButton "><i class="ri-skip-left-fill md:text-5xl text-5xl cursor-pointer"></i></div>
+        <div class="fullLoader md:w-12 md:h-12 w-12 h-12 hidden rounded-full md:border-8 border-8 border-gray-800 border-t-8 border-t-pink-700 animate-spin"></div>
+        <div class="fullPlayPause"><i class="fullPlay ri-play-circle-fill md:text-8xl text-5xl cursor-pointer"></i><i class=" fullPause ri-pause-circle-fill md:text-8xl text-5xl cursor-pointer" style="display:none"></i></div>
+        <div class="fullNextPlayButton "><i class="ri-skip-right-fill md:text-5xl text-5xl cursor-pointer"></i></div>
+
+    </div>
+    </div>
     </div>
     <div class="treandingSongs w-full h-60 md:px-20 px-4 md:mt-20 mt:10 md:relative">
         <div class="w-full flex justify-between">
@@ -240,6 +308,7 @@
        
     </div>
     </div>
+    <!-- footer -->
     <footer class="w-full h-80 md:mt-32 mt-24 border-t-2">
         <div class="w-full h-32 md:text-2xl uppercase list-none md:flex justify-evenly text-center items-center inline-block pt-3">
             <li >about us</li>

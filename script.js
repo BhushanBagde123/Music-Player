@@ -100,6 +100,9 @@ function searchButton(){
         
     })
 };
+
+navButton();
+
 searchButton();
 
 // main function to handle api events
@@ -125,7 +128,7 @@ searchButton();
                     <i class="text-3xl ri-play-circle-fill"></i>
                     </div>
                     </div>
-                    <div class="songName md:hidden w-full h-8  font-semibold p-1 text-xs"><p class="text-left">${data.songs.newsongs[i].song_title}</p></div>
+                    <div class="songName  w-full h-8  font-semibold p-1 text-xs md:text-xl"><p class="text-left">${data.songs.newsongs[i].song_title}</p></div>
                  </div>`
                
         
@@ -150,7 +153,7 @@ searchButton();
                        <i class="text-3xl ri-play-circle-fill"></i>
                        </div>
                        </div>
-                       <div class="songName md:hidden w-full h-8  p-1 font-semibold text-xs"><p class="text-left">${data.songs.trending[i].song_title}</p></div>
+                       <div class="songName  w-full h-8  p-1 font-semibold text-xs md:text-xl"><p class="text-left">${data.songs.trending[i].song_title}</p></div>
                     </div>`
                   
            
@@ -176,7 +179,7 @@ searchButton();
                        <i class="text-3xl ri-play-circle-fill"></i>
                        </div>
                        </div>
-                        <div class="songName md:hidden w-full h-8   p-1 font-semibold text-xs"><p class="text-left">${data.songs.oldsongs[i].song_title}</p></div>
+                        <div class="songName  w-full h-8   p-1 font-semibold text-xs md:text-xl"><p class="text-end">${data.songs.oldsongs[i].song_title}</p></div>
                     </div>`
                   
            
@@ -228,7 +231,7 @@ searchButton();
             artist.innerHTML=add;
         }
         topArtist();
-       
+        
 
         document.querySelectorAll(".songsList").forEach((items) => {
             items.addEventListener("mouseover", () => {
@@ -259,8 +262,9 @@ searchButton();
         
 let currentAudio = null;
 let isPlaying = false;
-// let likeSong=[];
 
+let seekBar =document.querySelector(".seekBar");
+let fullScreenSeekBar =document.querySelector(".fullSeekBar");
 // Function to initialize audio element
 function initAudio(audioLink) {
     currentAudio = new Audio(audioLink);
@@ -275,6 +279,8 @@ function initAudio(audioLink) {
         isPlaying = false;
         document.querySelector(".play").style.display = "block";
         document.querySelector(".pause").style.display = "none";
+        document.querySelector(".fullPlay").style.display = "block";
+        document.querySelector(".fullPause").style.display = "none";
     });
     
 }
@@ -286,45 +292,62 @@ function playAudio() {
         isPlaying = true;
         document.querySelector(".play").style.display = "none";
         document.querySelector(".pause").style.display = "block";
-
-        let progressBar =document.querySelector(".progressBar");
+        document.querySelector(".fullPlay").style.display = "none";
+        document.querySelector(".fullPause").style.display = "block";
         currentAudio.addEventListener("timeupdate",currentTime);
         currentAudio.addEventListener("timeupdate",updateProgressBar);
         currentAudio.addEventListener("loadedmetadata",totalTime);
         
         function updateProgressBar(){
-           let progress = (currentAudio.currentTime / currentAudio.duration) * 100;
-           progressBar.style.width = `${progress}%`;
-           progressBar.style.backgroundColor="#F33A6A";
-           progressBar.style.transition="1s linear";
-        //    console.log("x")
+        seekBar.value=currentAudio.currentTime;
+        fullScreenSeekBar.value =currentAudio.currentTime;
+
         }   
         currentAudio.addEventListener("ended",playNextSong)
     }
 }
-
+// seekBar of a songs
+seekBar.addEventListener("input",()=>{
+    currentAudio.currentTime =seekBar.value;
+    })
+fullScreenSeekBar.addEventListener("input",()=>{
+        currentAudio.currentTime =fullScreenSeekBar.value;
+        })
 function showLoader() {
     document.querySelector(".loader").style.display = "block";
     document.querySelector(".playPause").style.display="none";
+    document.querySelector(".fullLoader").style.display = "block";
+    document.querySelector(".fullPlayPause").style.display="none";
 }
 
 // Function to hide the loader
 function hideLoader() {
     document.querySelector(".loader").style.display = "none";
     document.querySelector(".playPause").style.display="block";
+    document.querySelector(".fullLoader").style.display = "none";
+    document.querySelector(".fullPlayPause").style.display="block";
 }
 
 
  function totalTime(){
-    let totalDurationDisplay=document.getElementById("total-duration")
+    let totalDurationDisplay=document.getElementById("total-duration");
+    let fullScreenTotalDurationDisplay =document.getElementById("full-total-duration")
     const totalDuration = formatTime(currentAudio.duration);
+    const fullScreenDuration =formatTime(currentAudio.duration);
     totalDurationDisplay.textContent = totalDuration;
+    fullScreenTotalDurationDisplay.textContent = fullScreenDuration;
+    seekBar.max=currentAudio.duration;
+    fullScreenSeekBar.max =currentAudio.duration;
+
     // console.log(totalDuration);
  }
 function currentTime(){
-    let currentDurationDisplay=document.querySelector("#current-time")
+    let currentDurationDisplay=document.querySelector("#current-time");
+    let fullScreenCurrentDurationDisplay =document.getElementById("full-current-time");
     const currentDuration = formatTime(currentAudio.currentTime);
+    const fullScreenCurrentDuration =formatTime(currentAudio.currentTime);
     currentDurationDisplay.textContent = currentDuration;
+    fullScreenCurrentDurationDisplay.textContent = fullScreenCurrentDuration;
     // console.log(currentDuration);
 }
 
@@ -342,86 +365,72 @@ function pauseAudio() {
         isPlaying = false;
         document.querySelector(".play").style.display = "block";
         document.querySelector(".pause").style.display = "none";
+        document.querySelector(".fullPlay").style.display = "block";
+        document.querySelector(".fullPause").style.display = "none";
     }
 }
 
 // Event listener for song click
-document.querySelector(".songsContents").addEventListener("click", (e) => {
-    try{
-    const songData = data.songs.newsongs[e.target.id];
-    if (songData) {
-        const { link, image, song_title, artist } = songData;
-        if (currentAudio) {
-            currentAudio.pause();
+function onSongClick(songsContainer){
+  const container=  document.querySelector(songsContainer)
+  container.addEventListener("click", (e) => {
+        try{
+            let songData = null;
+        if(songsContainer ===".songsContents"){
+           songData=data.songs.newsongs[e.target.id]
         }
-        initAudio(link);
-        document.querySelector(".image").src = image;
-        document.querySelector(".trackName h4").innerText = song_title;
-        document.querySelector(".trackName h6").innerText = artist;
-        document.querySelector(".songsTrack ").style.display="block";
-        const isLiked = likeSongs.some(song => song.song_title === songData.song_title);
-        const likeIcon = document.querySelector(".like i");
-        if (isLiked) {
-            likeIcon.style.color = "#F33A6A"; // Liked song color
-        } else {
-            likeIcon.style.color = "white"; // Default color
+        else if(songsContainer ===".trindingSongsContainer"){
+            songData=data.songs.trending[e.target.id]
         }
-        playAudio();
+        else{
+            songData=data.songs.oldsongs[e.target.id] 
+        }
+        if (songData) {
+            const { link, image, song_title, artist } = songData;
+            if (currentAudio) {
+                currentAudio.pause();
+            }
+            initAudio(link);
+            document.querySelector(".image").src = image;
+            document.querySelector(".trackName h4").innerText = song_title;
+            document.querySelector(".trackName h6").innerText = artist;
+            document.querySelector(".songsTrack ").style.display="block";
+            // fullScreen
+            document.querySelector(".fullTrackImage img").src = image;
+            document.querySelector(".fullTrackName h4").innerText = song_title;
+            document.querySelector(".fullTrackName h6").innerText = artist;
+            document.querySelector(".fullSongsTrack").style.backgroundImage =`url("${image}")`
+            // like songs
+            const isLiked = likeSongs.some(song => song.song_title === songData.song_title);
+            const likeIcon = document.querySelector(".like i");
+            if (isLiked) {
+                likeIcon.style.color = "#F33A6A"; // Liked song color
+            } else {
+                likeIcon.style.color = "white"; // Default color
+            }
+            playAudio();
+        }
     }
-}
-catch(e){
-    console.log(e);
-}
-});
-document.querySelector(".trindingSongsContainer").addEventListener("click", (e) => {
-    const songData = data.songs.trending[e.target.id];
-   
-    if (songData) {
-        const { link, image, song_title, artist } = songData;
-        if (currentAudio) {
-            currentAudio.pause();
-        }
-        initAudio(link);
-        document.querySelector(".image").src = image;
-        document.querySelector(".trackName h4").innerText = song_title;
-        document.querySelector(".trackName h6").innerText = artist;
-        document.querySelector(".songsTrack ").style.display="block";
-        const isLiked = likeSongs.some(song => song.song_title === songData.song_title);
-        const likeIcon = document.querySelector(".like i");
-        if (isLiked) {
-            likeIcon.style.color = "#F33A6A"; // Liked song color
-        } else {
-            likeIcon.style.color = "white"; // Default color
-        }
-        playAudio();
+    catch(e){
+        console.log(e);
     }
-});
+    });
+}
+onSongClick(".songsContents");
+onSongClick(".trindingSongsContainer");
+onSongClick(".oldSongsContainer");
 
-document.querySelector(".oldSongsContainer").addEventListener("click", (e) => {
-    const songData = data.songs.oldsongs[e.target.id];
-    if (songData) {
-        const { link, image, song_title, artist } = songData;
-        if (currentAudio) {
-            currentAudio.pause();
-        }
-        initAudio(link);
-        document.querySelector(".image").src = image;
-        document.querySelector(".trackName h4").innerText = song_title;
-        document.querySelector(".trackName h6").innerText = artist;
-        document.querySelector(".songsTrack ").style.display="block";
-        const isLiked = likeSongs.some(song => song.song_title === songData.song_title);
-        const likeIcon = document.querySelector(".like i");
-        if (isLiked) {
-            likeIcon.style.color = "#F33A6A"; // Liked song color
-        } else {
-            likeIcon.style.color = "white"; // Default color
-        }
-        playAudio();
-    }
-});
+
 
 // Event listener for play/pause button
 document.querySelector(".playPause").addEventListener("click", () => {
+    if (isPlaying) {
+        pauseAudio();
+    } else {
+        playAudio();
+    }
+});
+document.querySelector(".fullPlayPause").addEventListener("click", () => {
     if (isPlaying) {
         pauseAudio();
     } else {
@@ -469,6 +478,12 @@ function playSelectedSong(index) {
         document.querySelector(".image").src = image;
         document.querySelector(".trackName h4").innerText = song_title;
         document.querySelector(".trackName h6").innerText = artist;
+          // fullScreen
+        document.querySelector(".fullTrackImage img").src = image;
+        document.querySelector(".fullTrackName h4").innerText = song_title;
+        document.querySelector(".fullTrackName h6").innerText = artist;
+        document.querySelector(".fullSongsTrack").style.backgroundImage =`url("${image}")`
+        // likeSongs
         const isLiked = likeSongs.some(song => song.song_title === songData.song_title);
         const likeIcon = document.querySelector(".like i");
         if (isLiked) {
@@ -487,8 +502,14 @@ function playSelectedSong(index) {
 document.querySelector(".previousPlayButton").addEventListener("click",()=>{
     playPreviousSong()  
 })
+document.querySelector(".fullPreviousPlayButton").addEventListener("click",()=>{
+    playPreviousSong()  
+})
 // play next song
 document.querySelector(".nextPlayButton").addEventListener("click",()=>{
+    playNextSong()  
+})
+document.querySelector(".fullNextPlayButton").addEventListener("click",()=>{
     playNextSong()  
 })
 
@@ -511,6 +532,21 @@ function volumeDisplay(){
 
     
 }
+// songTrack fullScreen mode
+function songTrackFullScreen(){
+    let songTrack =document.querySelector(".trackImage img");
+    let fullScreenTrack =document.querySelector(".fullSongsTrack");
+    let crossScreenTrack =document.querySelector(".closeIcon");
+    songTrack.addEventListener("click",()=>{
+        fullScreenTrack.style.display="block";
+        document.querySelector("body").style.overflowY="hidden";
+    })
+    crossScreenTrack.addEventListener("click",()=>{
+        fullScreenTrack.style.display="none";
+        document.querySelector("body").style.overflowY="auto";
+    })
+}
+songTrackFullScreen();
 let likeSongs = []; // Array to store liked songs
 const like = document.querySelector(".like i");
 function likeDisplay(songData) {
@@ -538,6 +574,8 @@ like.addEventListener("click", () => {
     likeDisplay(songData);
     
 });
+// Function for searching the songs
+
 function searchSongs() {
     const templateCards = document.querySelector("[songs-data-template]");
     const songCardsContainer = document.querySelector("[song-data-cards]");
@@ -583,6 +621,18 @@ function searchSongs() {
     }); 
 }
 searchSongs();
+
+
+// function fullTrackSongs(){
+//     let songTrack =document.querySelector(".songsTrack");
+//     let trackImage =document.querySelector(".trackImage");
+//     trackImage.addEventListener("cilck",()=>{
+//         songTrack.style.height="200px";
+//         console.log("click");
+//     })
+    
+// }
+// fullTrackSongs();
 
 } catch (error) {
 console.log(error);
